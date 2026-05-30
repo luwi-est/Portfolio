@@ -1,0 +1,16 @@
+.card { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: start; }
+.degree { font-family: var(--font-display); font-size: 1.3rem; font-weight: 800; margin-bottom: 0.3rem; color: var(--text); }
+.spec { font-family: var(--font-display); font-size: 0.82rem; font-weight: 500; color: var(--text-muted); letter-spacing: 0.02em; margin: 0.2rem 0 0.75rem; }
+.school { color: var(--text-muted); margin-bottom: 0.5rem; }
+.honorWrap { margin-top: 1.25rem; }
+.honor {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-display); font-size: 1rem; font-weight: 800;
+  padding: 0; background: transparent; border: none;
+  color: var(--text); letter-spacing: 0.1em; text-transform: uppercase;
+}
+.honor::before {
+  content: ''; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--accent); box-shadow: 0 0 10px rgba(125,249,255,0.9); flex-shrink: 0;
+}
+.dates { font-family: var(--font-display); font-size: 0.85rem; color: var(--accent); font-weight: 600; letter-spacing: 0.03em; white-space: nowrap; }

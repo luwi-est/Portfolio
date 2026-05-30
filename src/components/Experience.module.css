@@ -1,0 +1,27 @@
+.grid { display: flex; flex-direction: column; gap: 1.5rem; }
+.card { display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: start; }
+.dotLine { display: flex; flex-direction: column; align-items: center; }
+.dot {
+  width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; margin-top: 4px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  box-shadow: 0 0 12px rgba(125,249,255,0.5);
+}
+.line { flex: 1; width: 2px; background: linear-gradient(to bottom, rgba(125,249,255,0.3), transparent); min-height: 60px; }
+.date {
+  font-family: var(--font-display); font-size: 0.78rem; letter-spacing: 0.05em;
+  color: var(--accent); font-weight: 600; text-transform: uppercase; margin-bottom: 0.3rem;
+}
+.role {
+  font-family: var(--font-display); font-size: 0.82rem; font-weight: 600;
+  color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.3rem;
+}
+.company {
+  font-family: var(--font-display); font-size: 1.45rem; font-weight: 800;
+  line-height: 1.15; letter-spacing: -0.01em;
+  background: linear-gradient(135deg, var(--text) 40%, rgba(200,215,255,0.7) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  margin-bottom: 1rem;
+}
+.bullets { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+.bullets li { color: var(--text-muted); font-size: 0.9rem; padding-left: 1.2rem; position: relative; }
+.bullets li::before { content: '▹'; color: var(--accent); position: absolute; left: 0; }
