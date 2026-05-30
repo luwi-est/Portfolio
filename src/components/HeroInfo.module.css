@@ -23,4 +23,4 @@
 .title span { color: var(--accent3); }
 .desc { max-width: 520px; color: var(--text-muted); font-size: 1rem; line-height: 1.8; }
 .btns { display: flex; gap: 1rem; margin-top: 2.5rem; flex-wrap: wrap; }
-.visual { width: 280px; height: 280px; flex-shrink: 0; }
+.visual { width: 320px; height: 320px; flex-shrink: 0; }

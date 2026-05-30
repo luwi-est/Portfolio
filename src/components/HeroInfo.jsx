@@ -1,15 +1,36 @@
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, MeshDistortMaterial } from '@react-three/drei';
+import { useMemo } from 'react';
+import * as THREE from 'three';
 import { meta } from '../data/portfolio';
 import styles from './HeroInfo.module.css';
 
 function TorusKnot() {
+  const gradientTexture = useMemo(() => {
+    const canvas = document.createElement('canvas');
+    canvas.width = 256;
+    canvas.height = 256;
+    const ctx = canvas.getContext('2d');
+    
+    // Create a radial gradient with dark colors
+    const gradient = ctx.createRadialGradient(128, 128, 0, 128, 128, 181);
+    gradient.addColorStop(0, '#1a2f4a');    // dark cyan-blue
+    gradient.addColorStop(0.5, '#0f1a2e');  // very dark blue
+    gradient.addColorStop(1, '#1a1f3a');    // dark purple-blue
+    
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, 256, 256);
+    
+    const texture = new THREE.CanvasTexture(canvas);
+    return texture;
+  }, []);
+
   return (
-    <mesh rotation={[0.4, 0.4, 0]}>
+    <mesh rotation={[0.4, 0.4, 0]} scale={0.9}>
       <torusKnotGeometry args={[1, 0.35, 128, 20, 2, 3]} />
       <MeshDistortMaterial
-        color="#0f1726"
-        emissive="#2a4a6f"
+        map={gradientTexture}
+        emissive="#1a3a5a"
         roughness={0.2}
         metalness={0.8}
         distort={0.15}
