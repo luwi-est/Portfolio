@@ -56,7 +56,7 @@ export const projects = [
       "Built for Bulacan State University BSIT dept.",
     ],
     previewBg: "linear-gradient(160deg,#061828,#0d2840)",
-    // image: "/images/internconnect.png",  ← uncomment + add file to /public/images/
+    image: "/images/internconnect.png",
   },
   {
     num: "02",
@@ -75,7 +75,7 @@ export const projects = [
       "Analytics dashboard for form responses",
     ],
     previewBg: "linear-gradient(160deg,#120828,#1e0d40)",
-    // image: "/images/student-portal.png",
+    image: "/images/student-portal.png",
   },
   {
     num: "03",
@@ -93,7 +93,7 @@ export const projects = [
       "Custom 2D physics & collision system",
     ],
     previewBg: "linear-gradient(160deg,#050f05,#0a200a)",
-    // image: "/images/cod-game.png",
+    video: "/videos/cod-game.mp4",
   },
   {
     num: "04",
@@ -111,7 +111,7 @@ export const projects = [
       "Full booking management system",
     ],
     previewBg: "linear-gradient(160deg,#120800,#281408)",
-    // image: "/images/hotel.png",
+    image: "/images/hotel.png",
   },
 ];
 

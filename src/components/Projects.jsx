@@ -155,7 +155,9 @@ export default function Projects() {
                   <div className={styles.bodyInner}>
                     <div className={styles.bodyContent}>
                       <div className={styles.imgSide} style={{ background: proj.previewBg }}>
-                        {proj.image
+                        {proj.video
+                          ? <video src={proj.video} autoPlay muted loop className={styles.screenshot} />
+                          : proj.image
                           ? <img src={proj.image} alt={proj.title} className={styles.screenshot} />
                           : <Mock />
                         }
