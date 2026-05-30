@@ -8,7 +8,7 @@
   cursor: none;
 }
 .item:hover { transform: none; }
-.active { border-color: rgba(125,249,255,0.35); }
+.active { border-color: rgba(125,249,255,0.35); opacity: 1 !important; transform: none !important; }
 
 .header {
   display: grid; grid-template-columns: 3rem 1fr auto;
