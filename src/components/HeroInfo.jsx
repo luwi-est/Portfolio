@@ -3,13 +3,13 @@ import { OrbitControls, MeshDistortMaterial } from '@react-three/drei';
 import { meta } from '../data/portfolio';
 import styles from './HeroInfo.module.css';
 
-function Octahedron() {
+function TorusKnot() {
   return (
     <mesh rotation={[0.4, 0.4, 0]}>
-      <octahedronGeometry args={[1, 2]} />
+      <torusKnotGeometry args={[1, 0.35, 128, 20, 2, 3]} />
       <MeshDistortMaterial
-        color="#4eb3e0"
-        emissive="#2a7ab0"
+        color="#0f1726"
+        emissive="#2a4a6f"
         roughness={0.2}
         metalness={0.8}
         distort={0.15}
@@ -46,7 +46,7 @@ export default function HeroInfo() {
               <pointLight position={[3, 3, 3]} color="#7DF9FF" intensity={2.5} />
               <pointLight position={[-3, -2, 2]} color="#B06EFF" intensity={2} />
               <pointLight position={[0, -3, 1]} color="#FF6EC7" intensity={1.2} />
-              <Octahedron />
+              <TorusKnot />
               <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={1.8} />
             </Canvas>
           </div>
