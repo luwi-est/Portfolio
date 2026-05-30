@@ -19,7 +19,8 @@ export const experience = [
     role: "Tech Intern",
     company: "Filinvest Alabang Inc.",
     bullets: [
-      "Served as Project Manager and contributor to five yearly initiative projects for FAI.",
+      "Trained under the Future Leaders Program, an immersive experience that challenged us to harness our skills and deliver high-value contributions to the organization.",
+      "Became a Project Lead and contributor to five yearly initiative projects for FAI.",
       "Built on-premises custom applications and internal tools to automate processes and improve work efficiency.",
       "Minimized manual work by automating data entry and report generation, saving 10+ hours per week.",
     ],
