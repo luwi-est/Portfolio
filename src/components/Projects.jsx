@@ -130,7 +130,7 @@ export default function Projects() {
           <div className="section-tag">// Projects</div>
           <h2 className="section-title">What I've <span className="highlight">Built</span></h2>
         </div>
-        <div className={styles.accordion}>
+        <div className={styles.accordion} onMouseLeave={() => setOpenIndex(0)}>
           {projects.map((proj, i) => {
             const Mock = MOCKS[i];
             const isOpen = openIndex === i;
