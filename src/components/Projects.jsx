@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { projects } from '../data/portfolio';
 import styles from './Projects.module.css';
 
@@ -121,32 +121,10 @@ function ProjectMockHotel() {
 const MOCKS = [ProjectMockInternConnect, ProjectMockPortal, ProjectMockCOD, ProjectMockHotel];
 
 export default function Projects() {
-  // Start with -1 so nothing is forced open until user interacts
   const [openIndex, setOpenIndex] = useState(0);
-  const leaveTimer = useRef(null);
 
   const handleItemEnter = (i) => {
-    // Cancel any pending close so moving between items never collapses
-    if (leaveTimer.current) {
-      clearTimeout(leaveTimer.current);
-      leaveTimer.current = null;
-    }
     setOpenIndex(i);
-  };
-
-  const handleAccordionLeave = () => {
-    // Small grace period — prevents flicker when cursor briefly exits
-    // between two adjacent items, but still closes if you truly leave
-    leaveTimer.current = setTimeout(() => {
-      setOpenIndex(0); // fall back to first item, never -1
-    }, 120);
-  };
-
-  const handleAccordionEnter = () => {
-    if (leaveTimer.current) {
-      clearTimeout(leaveTimer.current);
-      leaveTimer.current = null;
-    }
   };
 
   return (
@@ -156,11 +134,7 @@ export default function Projects() {
           <div className="section-tag">// Projects</div>
           <h2 className="section-title">What I've <span className="highlight">Built</span></h2>
         </div>
-        <div
-          className={styles.accordion}
-          onMouseLeave={handleAccordionLeave}
-          onMouseEnter={handleAccordionEnter}
-        >
+        <div className={styles.accordion}>
           {projects.map((proj, i) => {
             const Mock = MOCKS[i];
             const isOpen = openIndex === i;
