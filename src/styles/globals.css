@@ -75,13 +75,75 @@ section { padding: clamp(3rem, 8vw, 6rem) 0; }
 .divider { height: 1px; background: linear-gradient(to right, transparent, var(--glass-border), transparent); }
 
 /* ── RESPONSIVE ADJUSTMENTS ── */
+/* Tablet */
 @media (max-width: 768px) {
-  body { font-size: 14px; }
-  section { padding: clamp(2rem, 6vw, 3rem) 0; }
+  body { font-size: 14px; line-height: 1.65; }
+  section { padding: clamp(1.75rem, 5vw, 2.75rem) 0; }
+  .wrapper { padding: 0 clamp(1rem, 4vw, 1.5rem); }
+  .btn {
+    padding: clamp(0.55rem, 1.8vw, 0.7rem) clamp(1rem, 3.5vw, 1.5rem);
+    font-size: clamp(0.75rem, 1.3vw, 0.85rem);
+  }
+  .section-header {
+    margin-bottom: 2rem;
+  }
+  .section-tag {
+    font-size: 0.7rem;
+    margin-bottom: 0.6rem;
+  }
+  .section-title {
+    font-size: clamp(1.6rem, 2.5vw, 2rem);
+  }
+  .glass {
+    padding: 1.5rem;
+    border-radius: 14px;
+  }
 }
+
+/* Mobile */
 @media (max-width: 480px) {
-  body { font-size: 13px; }
-  section { padding: 2rem 0; }
+  body { 
+    font-size: 13px; 
+    line-height: 1.6;
+  }
+  section { 
+    padding: 1.5rem 0;
+  }
+  .wrapper { 
+    padding: 0 1rem;
+    max-width: 100%;
+  }
+  .divider {
+    height: 1px;
+  }
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    border-radius: 40px;
+    gap: 6px;
+  }
+  .btn-primary:hover {
+    transform: translateY(-1px);
+  }
+  .section-header {
+    margin-bottom: 1.5rem;
+  }
+  .section-tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-size: clamp(1.4rem, 5vw, 1.7rem);
+    line-height: 1.15;
+  }
+  .glass {
+    padding: 1.25rem;
+    border-radius: 12px;
+  }
+  .glass:hover {
+    transform: translateY(-2px);
+  }
 }
 
 /* ── CURSOR ── */

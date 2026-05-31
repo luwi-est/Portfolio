@@ -26,7 +26,7 @@
 .bullets li { color: var(--text-muted); font-size: clamp(0.85rem, 1.2vw, 0.9rem); padding-left: 1.2rem; position: relative; }
 .bullets li::before { content: '▹'; color: var(--accent); position: absolute; left: 0; }
 
-/* Mobile Responsive */
+/* Tablet Responsive */
 @media (max-width: 768px) {
   .grid {
     gap: 1rem;
@@ -35,27 +35,51 @@
     gap: 0.75rem;
   }
   .date {
-    font-size: 0.7rem;
+    font-size: 0.68rem;
   }
   .role {
-    font-size: 0.75rem;
+    font-size: 0.73rem;
   }
   .company {
     font-size: 1.1rem;
   }
   .bullets li {
     font-size: 0.85rem;
+    padding-left: 1rem;
   }
 }
 
+/* Mobile Responsive */
 @media (max-width: 480px) {
+  .grid {
+    gap: 0.75rem;
+  }
   .card {
     grid-template-columns: 1fr;
+    gap: 0.5rem;
   }
   .dotLine {
     display: none;
   }
+  .date {
+    font-size: 0.65rem;
+    margin-bottom: 0.2rem;
+  }
+  .role {
+    font-size: 0.7rem;
+    margin-bottom: 0.15rem;
+  }
   .company {
-    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    margin: 0.5rem 0 0.75rem;
+    line-height: 1.1;
+  }
+  .bullets li {
+    font-size: 0.8rem;
+    padding-left: 1rem;
+    margin-bottom: 0.35rem;
+  }
+  .bullets li::before {
+    font-size: 0.6rem;
   }
 }

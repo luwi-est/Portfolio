@@ -25,19 +25,58 @@
 .btns { display: flex; gap: 1rem; margin-top: 2.5rem; flex-wrap: wrap; }
 .visual { width: clamp(200px, 40vw, 320px); height: clamp(200px, 40vw, 320px); flex-shrink: 0; }
 
-/* Mobile Responsive */
+/* Tablet Responsive */
 @media (max-width: 768px) {
   .inner {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
   .visual {
     width: 100%;
-    max-width: 300px;
+    max-width: 280px;
     height: auto;
     aspect-ratio: 1;
     margin: 0 auto;
   }
   .desc {
     font-size: 0.95rem;
+  }
+  .title {
+    font-size: 1.05rem;
+  }
+  .btns {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  .section {
+    padding: 2rem 0 1.5rem;
+  }
+  .inner {
+    gap: 1.5rem;
+  }
+  .tag {
+    font-size: 0.72rem;
+    padding: 0.35rem 0.85rem;
+    margin-bottom: 1rem;
+  }
+  .title {
+    font-size: 0.95rem;
+    margin: 0.75rem 0 1rem;
+  }
+  .desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .visual {
+    max-width: 250px;
+  }
+  .btns {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
   }
 }

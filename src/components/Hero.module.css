@@ -28,6 +28,26 @@
 }
 .gap { display: inline-block; width: 0.25em; flex-shrink: 0; }
 
+/* Tablet Responsive */
+@media (max-width: 768px) {
+  .letter {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  .letter {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+  }
+  .hero {
+    min-height: 450px;
+  }
+  .nameScreen {
+    padding: 2rem 1rem;
+  }
+}
+
 .c1 { background: linear-gradient(160deg, #fff 20%, var(--accent) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .c2 { background: linear-gradient(160deg, #fff 20%, var(--accent2) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .c3 { background: linear-gradient(160deg, #fff 20%, var(--accent3) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
