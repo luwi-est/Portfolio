@@ -1,11 +1,11 @@
-.card { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: start; }
-.degree { font-family: var(--font-display); font-size: 1.3rem; font-weight: 800; margin-bottom: 0.3rem; color: var(--text); }
-.spec { font-family: var(--font-display); font-size: 0.82rem; font-weight: 500; color: var(--text-muted); letter-spacing: 0.02em; margin: 0.2rem 0 0.75rem; }
-.school { color: var(--text-muted); margin-bottom: 0.5rem; }
+.card { display: grid; grid-template-columns: 1fr auto; gap: clamp(1.5rem, 5vw, 2rem); align-items: start; }
+.degree { font-family: var(--font-display); font-size: clamp(1.1rem, 2.5vw, 1.3rem); font-weight: 800; margin-bottom: 0.3rem; color: var(--text); }
+.spec { font-family: var(--font-display); font-size: clamp(0.75rem, 1.5vw, 0.82rem); font-weight: 500; color: var(--text-muted); letter-spacing: 0.02em; margin: 0.2rem 0 0.75rem; }
+.school { color: var(--text-muted); font-size: clamp(0.85rem, 1.2vw, 0.9rem); margin-bottom: 0.5rem; }
 .honorWrap { margin-top: 1.25rem; }
 .honor {
   display: inline-flex; align-items: center; gap: 10px;
-  font-family: var(--font-display); font-size: 1rem; font-weight: 800;
+  font-family: var(--font-display); font-size: clamp(0.8rem, 1.5vw, 1rem); font-weight: 800;
   padding: 0; background: transparent; border: none;
   color: var(--text); letter-spacing: 0.1em; text-transform: uppercase;
 }
@@ -13,4 +13,30 @@
   content: ''; width: 7px; height: 7px; border-radius: 50%;
   background: var(--accent); box-shadow: 0 0 10px rgba(125,249,255,0.9); flex-shrink: 0;
 }
-.dates { font-family: var(--font-display); font-size: 0.85rem; color: var(--accent); font-weight: 600; letter-spacing: 0.03em; white-space: nowrap; }
+.dates { 
+  font-family: var(--font-display); font-size: clamp(0.75rem, 1.5vw, 0.85rem); 
+  color: var(--accent); font-weight: 600; letter-spacing: 0.03em; white-space: nowrap; 
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .card {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .dates {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    gap: 1rem;
+  }
+  .degree {
+    font-size: 1.1rem;
+  }
+  .spec {
+    font-size: 0.75rem;
+  }
+}

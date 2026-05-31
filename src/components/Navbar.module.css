@@ -1,16 +1,18 @@
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  padding: 1rem 2rem;
+  padding: 1rem clamp(1rem, 5vw, 2rem);
   background: rgba(5,8,22,0.6);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--glass-border);
   display: flex; align-items: center; justify-content: space-between;
 }
 .logo {
-  font-family: var(--font-display); font-size: 1.1rem; font-weight: 700;
+  font-family: var(--font-display); font-size: clamp(0.9rem, 2vw, 1.1rem); font-weight: 700;
   color: var(--text); letter-spacing: 0.05em; cursor: none;
 }
 .dot { color: var(--accent); }
+
+/* Desktop Menu */
 .links { display: flex; gap: 2rem; list-style: none; }
 .links a {
   font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase;
@@ -18,3 +20,48 @@
   font-family: var(--font-display); font-weight: 500; cursor: none;
 }
 .links a:hover { color: var(--accent); }
+
+/* Hamburger Menu */
+.hamburger {
+  display: none; flex-direction: column; gap: 6px; background: none; border: none;
+  cursor: pointer; padding: 0.5rem; z-index: 101;
+}
+.hamburger span {
+  width: 24px; height: 2px; background: var(--accent);
+  transition: all 0.3s ease; display: block;
+}
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 10px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Mobile Menu */
+.mobileMenu {
+  display: none; position: fixed; top: 60px; left: 0; right: 0;
+  background: rgba(5,8,22,0.95); backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--glass-border);
+  flex-direction: column; gap: 1rem; padding: 1.5rem 1rem;
+  z-index: 99; animation: slideDown 0.3s ease;
+}
+.mobileMenu.active { display: flex; }
+@keyframes slideDown { from { transform: translateY(-100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.mobileMenu a {
+  font-size: 1rem; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--text-muted); transition: color 0.2s;
+  font-family: var(--font-display); font-weight: 500; cursor: none;
+  padding: 0.75rem 1rem; display: block;
+}
+.mobileMenu a:hover { color: var(--accent); }
+
+/* Mobile Breakpoint */
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+  .links { display: none; }
+  .mobileMenu { display: none; }
+  .mobileMenu.active { display: flex; }
+}

@@ -57,10 +57,32 @@ a { text-decoration: none; }
 .orb3 { width: 300px; height: 300px; background: rgba(255,60,180,0.12); top: 40%; left: 50%; animation-duration: 20s; animation-delay: -7s; }
 @keyframes floatOrb { 0% { transform: translate(0,0) scale(1); } 100% { transform: translate(40px,30px) scale(1.1); } }
 
+/* Mobile Orb Scaling */
+@media (max-width: 768px) {
+  .orb1 { width: 300px; height: 300px; top: -50px; left: -100px; opacity: 0.3; }
+  .orb2 { width: 250px; height: 250px; right: -80px; opacity: 0.25; }
+  .orb3 { width: 200px; height: 200px; opacity: 0.2; }
+}
+@media (max-width: 480px) {
+  .orb1 { width: 200px; height: 200px; top: -20px; left: -80px; opacity: 0.2; }
+  .orb2 { width: 150px; height: 150px; right: -50px; opacity: 0.15; }
+  .orb3 { width: 120px; height: 120px; opacity: 0.1; }
+}
+
 /* ── LAYOUT ── */
-.wrapper { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
-section { padding: 6rem 0; }
+.wrapper { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 0 clamp(1rem, 5vw, 2rem); }
+section { padding: clamp(3rem, 8vw, 6rem) 0; }
 .divider { height: 1px; background: linear-gradient(to right, transparent, var(--glass-border), transparent); }
+
+/* ── RESPONSIVE ADJUSTMENTS ── */
+@media (max-width: 768px) {
+  body { font-size: 14px; }
+  section { padding: clamp(2rem, 6vw, 3rem) 0; }
+}
+@media (max-width: 480px) {
+  body { font-size: 13px; }
+  section { padding: 2rem 0; }
+}
 
 /* ── CURSOR ── */
 #cursor-follower {
@@ -108,8 +130,10 @@ section { padding: 6rem 0; }
 /* ── BUTTONS ── */
 .btn {
   display: inline-flex; align-items: center; gap: 8px;
-  padding: 0.75rem 1.75rem; border-radius: 50px;
-  font-family: var(--font-display); font-size: 0.9rem; font-weight: 600;
+  padding: clamp(0.6rem, 2vw, 0.75rem) clamp(1.2rem, 4vw, 1.75rem); 
+  border-radius: 50px;
+  font-family: var(--font-display); font-size: clamp(0.8rem, 1.5vw, 0.9rem); 
+  font-weight: 600;
   letter-spacing: 0.03em; text-decoration: none; cursor: none;
   transition: all 0.25s; border: none; outline: none;
 }
@@ -123,6 +147,14 @@ section { padding: 6rem 0; }
   backdrop-filter: blur(10px);
 }
 .btn-ghost:hover { border-color: var(--accent); color: var(--accent); background: rgba(125,249,255,0.05); }
+
+/* Mobile Button Adjustments */
+@media (max-width: 480px) {
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
 
 /* ── TECH TAGS ── */
 .tech-tag {

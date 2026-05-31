@@ -1,5 +1,5 @@
-.grid { display: flex; flex-direction: column; gap: 1.5rem; }
-.card { display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: start; }
+.grid { display: flex; flex-direction: column; gap: clamp(1.5rem, 5vw, 1.5rem); }
+.card { display: grid; grid-template-columns: auto 1fr; gap: clamp(1rem, 3vw, 1.5rem); align-items: start; }
 .dotLine { display: flex; flex-direction: column; align-items: center; }
 .dot {
   width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; margin-top: 4px;
@@ -8,20 +8,54 @@
 }
 .line { flex: 1; width: 2px; background: linear-gradient(to bottom, rgba(125,249,255,0.3), transparent); min-height: 60px; }
 .date {
-  font-family: var(--font-display); font-size: 0.78rem; letter-spacing: 0.05em;
+  font-family: var(--font-display); font-size: clamp(0.7rem, 1.5vw, 0.78rem); letter-spacing: 0.05em;
   color: var(--accent); font-weight: 600; text-transform: uppercase; margin-bottom: 0.3rem;
 }
 .role {
-  font-family: var(--font-display); font-size: 0.82rem; font-weight: 600;
+  font-family: var(--font-display); font-size: clamp(0.75rem, 1.5vw, 0.82rem); font-weight: 600;
   color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.3rem;
 }
 .company {
-  font-family: var(--font-display); font-size: 1.45rem; font-weight: 800;
+  font-family: var(--font-display); font-size: clamp(1.1rem, 3vw, 1.45rem); font-weight: 800;
   line-height: 1.15; letter-spacing: -0.01em;
   background: linear-gradient(135deg, var(--text) 40%, rgba(200,215,255,0.7) 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
   margin-bottom: 1rem;
 }
 .bullets { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-.bullets li { color: var(--text-muted); font-size: 0.9rem; padding-left: 1.2rem; position: relative; }
+.bullets li { color: var(--text-muted); font-size: clamp(0.85rem, 1.2vw, 0.9rem); padding-left: 1.2rem; position: relative; }
 .bullets li::before { content: '▹'; color: var(--accent); position: absolute; left: 0; }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .grid {
+    gap: 1rem;
+  }
+  .card {
+    gap: 0.75rem;
+  }
+  .date {
+    font-size: 0.7rem;
+  }
+  .role {
+    font-size: 0.75rem;
+  }
+  .company {
+    font-size: 1.1rem;
+  }
+  .bullets li {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+  .dotLine {
+    display: none;
+  }
+  .company {
+    margin-top: 0.5rem;
+  }
+}
