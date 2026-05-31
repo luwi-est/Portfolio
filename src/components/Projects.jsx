@@ -148,7 +148,7 @@ export default function Projects() {
                   <div className={styles.headerNum}>{proj.num}</div>
                   <div className={styles.headerName}>{proj.title}</div>
                   <div className={styles.headerTags}>
-                    {proj.tags.slice(0, 3).map((t, j) => <TechTag key={j} {...t} />)}
+                    {proj.type}
                   </div>
                 </div>
                 <div className={`${styles.body} ${isOpen ? styles.bodyOpen : ''}`}>
