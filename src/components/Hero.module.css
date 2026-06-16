@@ -8,16 +8,13 @@
   position: relative; z-index: 2;
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
-  width: 100%; max-width: 100%; padding: 0 clamp(1rem, 5vw, 1.5rem); text-align: center;
-  overflow: hidden; box-sizing: border-box;
+  width: 100%; padding: 0 clamp(1rem, 5vw, 1.5rem); text-align: center;
+  overflow: hidden;
 }
 .nameRow {
   display: flex; flex-wrap: nowrap;
   align-items: baseline; justify-content: center;
   line-height: 0.92;
-  width: 100%;
-  max-width: 100%;
-  overflow: hidden;
 }
 .nameRow + .nameRow { margin-top: 0.05em; }
 .letter {
@@ -29,15 +26,13 @@
   line-height: 0.92;
   will-change: transform;
   cursor: default; user-select: none;
-  flex-shrink: 1;
-  min-width: 0;
 }
 .gap { display: inline-block; width: 0.25em; flex-shrink: 0; }
 
 /* Tablet Responsive */
 @media (max-width: 768px) {
   .letter {
-    font-size: clamp(1.5rem, 5vw, 3rem);
+    font-size: clamp(2.5rem, 8vw, 5rem);
   }
 }
 
