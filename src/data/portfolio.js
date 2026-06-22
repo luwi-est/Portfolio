@@ -20,14 +20,14 @@ export const experience = [
     company: "Filinvest Alabang Inc.",
     bullets: [
       "Trained under the Future Leaders Program, an immersive experience that challenged us to harness our skills and deliver high-value contributions to the organization.",
-      "Became a Project Lead and contributor to five yearly initiative projects for FAI.",
+      "Became a Project Lead and contributor to five yearly initiative projects for the company.",
       "Built on-premises custom applications and internal tools to automate processes and improve work efficiency.",
-      "Minimized manual work by automating data entry and report generation, saving 10+ hours per week.",
+      "Minimized manual work by automating data entry and report generation.",
     ],
   },
   {
     date: "Mar 2025 – May 2025",
-    role: "Student Intern",
+    role: "Intern",
     company: "Smartbridge: Salesforce Supported Virtual Internship Program",
     bullets: [
       "Completed a Salesforce virtual internship gaining hands-on experience with CRM platforms, cloud computing, and enterprise software.",
