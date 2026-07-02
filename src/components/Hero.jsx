@@ -12,7 +12,7 @@ function LetterRow({ text, colorStart }) {
     <div className={styles.nameRow}>
       {[...text].map((ch, i) =>
         ch === ' ' ? (
-          <span key={i} className={styles.gap} />
+          <span key={i} className={`${styles.gap} ${styles.lineBreak}`} />
         ) : (
           <span
             key={i}

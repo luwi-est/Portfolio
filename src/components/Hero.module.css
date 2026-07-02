@@ -27,6 +27,7 @@
   cursor: default; user-select: none;
 }
 .gap { display: inline-block; width: 0.2em; flex-shrink: 0; }
+.lineBreak { flex: 0 0 auto; }
 
 /* Tablet Responsive */
 @media (max-width: 768px) {
@@ -43,6 +44,11 @@
   }
   .gap {
     width: 0.18em;
+  }
+  .lineBreak {
+    flex: 0 0 100%;
+    width: 0;
+    height: 0;
   }
   .hero {
     min-height: 450px;
